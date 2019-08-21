@@ -1,3 +1,4 @@
+C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
 C:\Users\ozenc\Desktop\ToDoList\bin\ToDoList.dll.config
 C:\Users\ozenc\Desktop\ToDoList\bin\ToDoList.dll
 C:\Users\ozenc\Desktop\ToDoList\bin\ToDoList.pdb
@@ -99,7 +100,8 @@ C:\Users\ozenc\Desktop\ToDoList\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ozenc\Desktop\ToDoList\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\ozenc\Desktop\ToDoList\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csprojAssemblyReference.cache
-C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csproj.CopyComplete
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.dll
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.pdb
+C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.Migrations.ToDo1.resources
+C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.cache

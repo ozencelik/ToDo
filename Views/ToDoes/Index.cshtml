@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ToDoList.Models.ToDo>
+
+@{
+    ViewBag.Title = "   ";
+}
+
+<div id="tableDiv"></div>
+<br />
+<p><a href="@Url.Action("Create", "ToDoes")" class="btn btn-primary btn-lg"><span>Add New Item</span></a></p>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Custom_Scripts/BuildTable.js"></script>
+}
+

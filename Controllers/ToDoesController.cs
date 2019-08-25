@@ -66,21 +66,6 @@ namespace ToDoList.Controllers
         public ActionResult Create([Bind(Include = "Id,Description,Deadline")] ToDo toDo)
         {
 
-            
-
-            /*
-             
-             
-             
-             
-             
-             
-             */
-
-
-
-
-
             if (ModelState.IsValid)
             {
                 string currentUserId = (User.Identity.GetUserId());

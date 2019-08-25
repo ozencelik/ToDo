@@ -105,3 +105,12 @@ C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.dll
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.pdb
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.Migrations.ToDo1.resources
 C:\Users\ozenc\Desktop\ToDoList\obj\Debug\ToDoList.csproj.GenerateResource.cache
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.Core.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\Quartz.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.pdb
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.xml
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.Core.pdb
+C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.Core.xml
+C:\Users\ozenc\Desktop\ToDoList\bin\Quartz.pdb
+C:\Users\ozenc\Desktop\ToDoList\bin\Quartz.xml

@@ -26,7 +26,7 @@ namespace ToDoList.Migrations
             var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
             userManager.Create(user, "password");
-
+            
         }
 
 

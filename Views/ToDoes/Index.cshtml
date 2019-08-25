@@ -4,9 +4,12 @@
     ViewBag.Title = "   ";
 }
 
+<h4 class="text-danger"> @ViewBag.Message</h4>
+
 <div id="tableDiv"></div>
 <br />
 <p><a href="@Url.Action("Create", "ToDoes")" class="btn btn-primary btn-lg"><span>Add New Item</span></a></p>
+
 
 @section Scripts {
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>

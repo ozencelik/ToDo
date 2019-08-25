@@ -114,3 +114,12 @@ C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.Core.pdb
 C:\Users\ozenc\Desktop\ToDoList\bin\Common.Logging.Core.xml
 C:\Users\ozenc\Desktop\ToDoList\bin\Quartz.pdb
 C:\Users\ozenc\Desktop\ToDoList\bin\Quartz.xml
+C:\Users\ozenc\Desktop\ToDoList\bin\Hangfire.Core.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\Hangfire.SqlServer.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\Hangfire.Core.xml
+C:\Users\ozenc\Desktop\ToDoList\bin\Hangfire.SqlServer.xml
+C:\Users\ozenc\Desktop\ToDoList\bin\es\Hangfire.Core.resources.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\nl\Hangfire.Core.resources.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\pt-BR\Hangfire.Core.resources.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\zh\Hangfire.Core.resources.dll
+C:\Users\ozenc\Desktop\ToDoList\bin\zh-TW\Hangfire.Core.resources.dll

@@ -8,16 +8,29 @@ using System.Web;
 using System.Web.Mvc;
 using ToDoList.Models;
 using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
+
+
+using System.Web.UI.WebControls;
+
+using Hangfire;
+using System.Web.UI;
 
 namespace ToDoList.Controllers
 {
     public class ToDoesController : Controller
     {
+        static int DeadlineExpired = 0;
+
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ToDoes
         public ActionResult Index()
         {
+            if(DeadlineExpired == 1){
+                ViewBag.Message = "Expired Be";
+                DeadlineExpired = 0;
+            }
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(
                 x => x.Id == currentUserId);
@@ -76,11 +89,37 @@ namespace ToDoList.Controllers
                 toDo.IsDone = false;
                 db.Todos.Add(toDo);
                 db.SaveChanges();
+                
+                //Enqueue Hangfire Message 
+                var jobId = BackgroundJob.Schedule(() => SendDeadlineMessage(), TimeSpan.Parse(GetTimeSpan(DateTime.Now, toDo.Deadline)));
                 return RedirectToAction("Index");
             }
 
+
             return View(toDo);
         }
+        
+
+        public ActionResult SendDeadlineMessage()
+        {
+            System.Diagnostics.Debug.WriteLine("Girdiiiiiiiii");
+            DeadlineExpired = 1;
+
+            return View();
+        }
+
+        public String GetTimeSpan(DateTime now, DateTime deadline)
+        {
+            System.Diagnostics.Debug.WriteLine("Now : " + now);
+            System.Diagnostics.Debug.WriteLine("Deadline : " + deadline);
+            TimeSpan diff = deadline - now;
+            string timeSpan = diff.Days + "." + diff.Hours + ":" + diff.Minutes + ":" + diff.Seconds;
+            System.Diagnostics.Debug.WriteLine("TimeSpan : " + timeSpan);
+
+            return timeSpan;
+        }
+
+
 
         // GET: ToDoes/Edit/5
         public ActionResult Edit(int? id)

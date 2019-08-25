@@ -2,7 +2,7 @@
 
     var today = new Date();
     console.log(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + '  ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
-    $('.datetimepicker').datepicker({
+    $('.datetimepicker').datetimepicker({
         changeMonth: true,
         changeYear: true,
         yearRange: "2019:2030",

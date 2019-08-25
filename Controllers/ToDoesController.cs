@@ -28,7 +28,7 @@ namespace ToDoList.Controllers
         public ActionResult Index()
         {
             if(DeadlineExpired == 1){
-                ViewBag.Message = "Expired Be";
+                ViewBag.Message = "Your item expired !!!";
                 DeadlineExpired = 0;
             }
             string currentUserId = User.Identity.GetUserId();
@@ -102,10 +102,9 @@ namespace ToDoList.Controllers
 
         public ActionResult SendDeadlineMessage()
         {
-            System.Diagnostics.Debug.WriteLine("Girdiiiiiiiii");
             DeadlineExpired = 1;
-
-            return View();
+            System.Diagnostics.Debug.WriteLine("SendDeadlineMessage");
+            return RedirectToAction("Index");
         }
 
         public String GetTimeSpan(DateTime now, DateTime deadline)

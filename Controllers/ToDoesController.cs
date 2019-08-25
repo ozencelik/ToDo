@@ -63,8 +63,24 @@ namespace ToDoList.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,IsDone")] ToDo toDo)
+        public ActionResult Create([Bind(Include = "Id,Description,Deadline")] ToDo toDo)
         {
+
+            
+
+            /*
+             
+             
+             
+             
+             
+             
+             */
+
+
+
+
+
             if (ModelState.IsValid)
             {
                 string currentUserId = (User.Identity.GetUserId());
@@ -72,6 +88,7 @@ namespace ToDoList.Controllers
                 ApplicationUser currentUser = db.Users.FirstOrDefault(
                     x => x.Id == currentUserId);
                 toDo.User = currentUser;
+                toDo.IsDone = false;
                 db.Todos.Add(toDo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -100,7 +117,7 @@ namespace ToDoList.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,IsDone")] ToDo toDo)
+        public ActionResult Edit([Bind(Include = "Id,Description,IsDone,Deadline")] ToDo toDo)
         {
             if (ModelState.IsValid)
             {

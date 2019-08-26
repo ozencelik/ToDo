@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Styling for todo items*/
+.CompletedTodo{
+    text-decoration:line-through,
+}

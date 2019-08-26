@@ -21,13 +21,15 @@ namespace ToDoList.Controllers
     public class ToDoesController : Controller
     {
         static int DeadlineExpired = 0;
-
         private ApplicationDbContext db = new ApplicationDbContext();
+
 
         // GET: ToDoes
         public ActionResult Index()
         {
-            if(DeadlineExpired == 1){
+            System.Diagnostics.Debug.WriteLine("Index");
+
+            if (DeadlineExpired == 1){
                 ViewBag.Message = "Your item expired !!!";
                 DeadlineExpired = 0;
             }
@@ -89,9 +91,9 @@ namespace ToDoList.Controllers
                 toDo.IsDone = false;
                 db.Todos.Add(toDo);
                 db.SaveChanges();
-                
+
                 //Enqueue Hangfire Message 
-                var jobId = BackgroundJob.Schedule(() => SendDeadlineMessage(), TimeSpan.Parse(GetTimeSpan(DateTime.Now, toDo.Deadline)));
+                var jobId = BackgroundJob.Schedule(() => SendDeadlineMessage(toDo.Id), TimeSpan.Parse(GetTimeSpan(DateTime.Now, toDo.Deadline)));
                 return RedirectToAction("Index");
             }
 
@@ -100,10 +102,10 @@ namespace ToDoList.Controllers
         }
         
 
-        public ActionResult SendDeadlineMessage()
+        public ActionResult SendDeadlineMessage(int Id)
         {
             DeadlineExpired = 1;
-            System.Diagnostics.Debug.WriteLine("SendDeadlineMessage");
+            System.Diagnostics.Debug.WriteLine("SendDeadlineMessage - ToDo Id : "+ Id);
             return RedirectToAction("Index");
         }
 

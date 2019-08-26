@@ -5,6 +5,19 @@
     ViewBag.Title = "_ToDoTable";
 }
 
+@if (ViewBag.User != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("Your item ID:@ViewBag.User.Id expired !!!");
+        }
+    </script>
+    <h2 class="alert alert-danger" role="alert">
+        @ViewBag.Message
+    </h2>
+}
+
+
 <h2>To do list</h2>
 
 <table class="table">
@@ -24,20 +37,53 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Deadline)
-            </td>
-            <td>
-                @Html.CheckBoxFor(modelItem => item.IsDone, new { id = item.Id, @class = "ActiveCheck" })
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
+
+            @if (item.IsDone)
+            {
+                <td>
+                    <div class="alert alert-success" role="alert">
+                        @Html.DisplayFor(modelItem => item.Description, new { @class = "CompletedTodo" })
+                    </div>
+                </td>
+                <td>
+                    <div class="alert alert-success" role="alert">
+                        @Html.DisplayFor(modelItem => item.Deadline)
+                    </div>
+                </td>
+                <td>
+                    <div class="alert alert-success" role="alert">
+                        @Html.CheckBoxFor(modelItem => item.IsDone, new { id = item.Id, @class = "ActiveCheck" })
+                    </div>
+
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deadline)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.IsDone, new { id = item.Id, @class = "ActiveCheck" })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            }
         </tr>
+
+
+
+
+
+
     }
 
 </table>
